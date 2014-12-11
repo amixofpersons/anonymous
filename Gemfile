@@ -37,3 +37,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Rspec for testing
+gem 'rspec-rails', group: [:development, :test]
