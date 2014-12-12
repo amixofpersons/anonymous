@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   #SESSIONS routes
   # route for the login form
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new', as: :sessions
   # route to process data from login form
   post '/login' => 'sessions#create'
   # route to sign users out

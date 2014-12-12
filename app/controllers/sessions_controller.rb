@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email])
+    user = User.find_by(name: params[:session][:user_name])
 
-    if authenticate?
+    if user && user.authenticate(params[:session][:user_password])
       session[:user_id] = user.id
       redirect_to root_path
     else
+      flash[:error] = "Invalid Login."
       redirect_to login_path
     end
   end
@@ -19,12 +20,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to login_path, :notice => 'Logged Out!'
   end
-
-  private
-
-    def authenticate?
-      if user && user.authenticate(params[:session][:password])
-      end
-    end
 
 end
