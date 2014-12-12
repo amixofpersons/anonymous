@@ -17,14 +17,14 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @posts = Post.all.map {|post| [post.name, post.id]}
-    @comment = Comment.find[:id]
+    @comment = Comment.find params[:id]
+    render :edit
   end
 
   def update
     @comment = Comment.find params[:id]
-    if @comment.update_attributes params[:comment]
-      redirect_to post_path
+    if @comment.update_attributes(comment_params)
+      redirect_to post_path(@comment.post)
     else
       render :new
     end
