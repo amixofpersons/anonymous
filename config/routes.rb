@@ -2,11 +2,21 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
 
-  # resource :posts, only: [:index, :new, :show, :create, :destroy]
-
-  resources :posts, only: [:index, :new, :show, :create, :destroy] do
+  resources :posts do
     resources :comments
   end
+
+  #SESSIONS routes
+  # route for the login form
+  get '/login' => 'sessions#new'
+  # route to process data from login form
+  post '/login' => 'sessions#create'
+  # route to sign users out
+  get '/logout' => 'sessions#destroy'#, as: :logout
+
+  # USERS SIGNUP
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
