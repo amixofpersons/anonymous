@@ -43,3 +43,6 @@ gem 'rspec-rails', group: [:development, :test]
 
 # Faker for fake data
 gem 'faker', group: [:development, :test]
+
+#For generating test models
+gem "factory_girl_rails", group: [:development, :test]

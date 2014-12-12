@@ -8,14 +8,14 @@ Rails.application.routes.draw do
 
   #SESSIONS routes
   # route for the login form
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new', as: :sessions
   # route to process data from login form
   post '/login' => 'sessions#create'
   # route to sign users out
   get '/logout' => 'sessions#destroy'#, as: :logout
 
   # USERS SIGNUP
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new', as: :users
   post '/signup' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.

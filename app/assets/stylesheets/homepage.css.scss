@@ -1,0 +1,69 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+/*  position:absolute;
+  height: 1080px;
+  width: 1920px;*/
+  background: url('homepage.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.menu-toggle {
+  height: 100px;
+  width: 100px;
+  float:right;
+}
+
+.nav-bar {
+  position:relative;
+}
+
+.nav-list {
+  float:right;
+  display:none;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+a {
+  text-decoration:none;
+  font-family: 'Josefin Slab', serif;
+}
+
+.header {
+  float:left;
+  font-family: 'Josefin Slab', serif;
+  font-size: 1em;
+  padding-left: 3em;
+}
+
+.secrets {
+  position:relative;
+  top:30em;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  visibility: visible;
+}
+
+.secrets a {
+  font-family: 'Josefin Slab', serif;
+  font-size: 2em;
+  margin-right: 2.7em;
+  text-decoration: none;
+  border: solid black .190em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: .2em;
+  color: black;
+  width: 40%;
+}
