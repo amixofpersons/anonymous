@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'homepage'
+  root to: 'users#index'
 
-  resource :posts, only: [:new, :show, :create, :destroy, :index]
+  # resource :posts, only: [:index, :new, :show, :create, :destroy]
 
-  resources :posts do
+  resources :posts, only: [:index, :new, :show, :create, :destroy] do
     resources :comments
   end
 
