@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user, :aliases => [:poster] do
-    name "waffles"
-    password "test"
-    sequence(:email) { |n| "idk@gmail.com"}
+    name { Faker::Name.first_name }
+    password "test_pass"
+    email { Faker::Internet.email }
   end
 end
