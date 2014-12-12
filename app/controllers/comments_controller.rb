@@ -35,4 +35,9 @@ class CommentsController < ApplicationController
     redirect_to post_path
   end
 
+  def index
+    @comments = Comment.where(post_id: params[:post_id])
+    render :index
+  end
+
 end
