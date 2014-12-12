@@ -14,32 +14,66 @@ body {
   background-size: cover;
 }
 
-#menu-toggle {
-/*  position: fixed;*/
+.menu-toggle {
+  height: 100px;
+  width: 100px;
+  float:right;
+/*  background: url('menu-icon.png') no-repeat center center fixed;
+  position: fixed;
   float:right;
   top: 20px;
   left: 0;
   z-index: 1000;
-/*  padding-left: 10px;
+  padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 10px;*/
+  padding-right: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   transition: all 1s ease;
-  margin-left: 1em;
+  margin-left: 1em;*/
 }
 
 .nav-bar {
   position:relative;
 }
 
-#nav-list {
+.nav-list {
   float:right;
 /*  display:none;*/
 }
 
-#header {
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+a {
+  text-decoration:none;
+}
+
+.header {
   float:left;
 }
 
+.secrets {
+  position:relative;
+  top:30em;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  visibility: visible;
+}
+
+.secrets a {
+  border-radius: 25px;
+  font-size: 2em;
+  margin-left: 3.5em;
+  text-decoration: none;
+  border: solid black .190em;
+  padding-right: 1em;
+  padding-left: 1em;
+  color: black;
+  width: 40%;
+  height: 7.5%;
+}
