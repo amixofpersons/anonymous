@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'welcome#index'
+  root to: 'welcome#homepage'
 
   resources :posts do
     resources :comments
