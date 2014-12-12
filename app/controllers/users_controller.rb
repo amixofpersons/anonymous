@@ -5,14 +5,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new params[:user]
+    @user = User.new(user_params)
     if @user.save
-      redirect_to post_path
+      redirect_to posts_path
     else
+      flash[:error] = @user.errors.full_messages
       render :new
     end
   end
 
   def index
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:name,:email,:password,:password_confirmation)
+    end
 end

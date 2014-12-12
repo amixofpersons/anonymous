@@ -1,3 +1,11 @@
-<div class="login">
-<div class="muh">Hello Login Form</div>
-</div>
+<%= flash.now[:error] %>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+ <%= f.label :user_name %>
+ <%= f.text_field :user_name %>
+
+ <%= f.label :user_password %>
+ <%= f.password_field :user_password %>
+
+ <%= f.submit "Log In" %>
+<% end %>
