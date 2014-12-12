@@ -40,3 +40,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Rspec for testing
 gem 'rspec-rails', group: [:development, :test]
+
+# Faker for fake data
+gem 'faker', group: [:development, :test]
