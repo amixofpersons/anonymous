@@ -14,10 +14,4 @@
  *= require_self
  */
 
-body {
-background: url('homepage.jpg') no-repeat center center fixed;
--moz-background-size: cover;
--webkit-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
+
