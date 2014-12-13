@@ -18,6 +18,17 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path id: @post.id
     else
+      flash[:error] = @post.errors.full_messages
+      render :new
+    end
+  end
+
+  def update
+    @post = Post.find params[:id]
+    if @post.update_attributes(post_params)
+      redirect_to posts_path
+    else
+      flash[:error] = @post.errors.full_messages
       render :new
     end
   end

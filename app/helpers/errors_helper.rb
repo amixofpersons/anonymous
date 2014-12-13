@@ -1,5 +1,4 @@
 module ErrorsHelper
-  #..
   def display_error
     error = flash[:error]
     flash[:error] = nil
