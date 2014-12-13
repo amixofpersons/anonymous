@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :votes, as: :votable
 
-  validates :poster, presence: true
+  validates :user_id, presence: true
 
   def number_of_votes
     self.votes.size

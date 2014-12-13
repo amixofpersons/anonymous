@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def new
-    @post = Post.new
+    if current_user
+      @post = Post.new
+    else
+      redirect_to login_path
+    end
   end
 
   def show
@@ -9,9 +13,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new params[:post]
+    user = current_user
+    @post = user.posts.new post_params
     if @post.save
-      redirect_to post_path
+      redirect_to post_path id: @post.id
     else
       render :new
     end
@@ -25,5 +30,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order('created_at DESC')
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
   end
 end
