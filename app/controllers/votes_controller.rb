@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+
   def create
     user = current_user
     @vote = user.votes.new
