@@ -1,15 +1,18 @@
-<ul>
-  <%= form_for @post do |f| %>
-    <li>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </li>
-    <li>
-      <%= f.label :body %>
-      <%= f.text_area :body  %>
-    </li>
-    <li>
-      <%= f.submit %>
-    </li>
-  <% end %>
-</ul>
+<div class="new-post-form">
+  <ul>
+    <%= form_for @post do |f| %>
+      <li>
+        <%f.label :title %>
+        <%= f.text_field :title, :placeholder => "Give your Secret a Title"%>
+      </li>
+      <br>
+      <li>
+        <% f.label :body %>
+        <%= f.text_area :body, :placeholder => "Tell Us a Secret" %>
+      </li>
+      <li>
+        <%= f.submit "Share Your Secret" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

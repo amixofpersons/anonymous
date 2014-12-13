@@ -1,0 +1,38 @@
+.new_post {
+  position:relative;
+  top:20em;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.new_post input, textarea {
+  font-size: 1em;
+  height: 20px;
+  border-radius: 5px;
+  border: solid black .190em;
+  opacity: 0.4;
+}
+
+.new_post textarea {
+  width: 300px;
+  height: 200px;
+}
+
+.new_post input[type=submit] {
+  opacity: 1;
+  font-size: 1em;
+  height: 30px;
+  text-decoration: none;
+  border: solid black .190em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: .2em;
+  color: black;
+  width: 40%;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
