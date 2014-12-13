@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   has_many :votes, as: :votable
 
   validates :user_id, presence: true
+  validates :title, presence: true
+  validates :body, presence: true
 
   def number_of_votes
     self.votes.size
