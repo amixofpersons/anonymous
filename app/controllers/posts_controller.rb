@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
+    user = current_user
     @post = user.posts.new post_params
     if @post.save
       redirect_to post_path id: @post.id
