@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
-  def number_of_votes
+  def score
     self.votes.size
   end
 
