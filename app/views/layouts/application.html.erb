@@ -8,8 +8,18 @@
   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="header">
+  <% if current_user %>
+      <%= link_to 'Logout', logout_path  %>
+  <% else %>
+      <a href="/users/new">Signup</a> | <a href="/login">Login</a>
+  <% end %>
 
-<%= yield %>
+  <span><%= link_to 'Home', root_path%></span>
+
+</div>
+
+  <%= yield %>
 
 </body>
 </html>
