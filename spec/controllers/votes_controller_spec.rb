@@ -8,8 +8,7 @@ describe VotesController do
       session[:user_id] = test_user.id
       expect{
         post :create,
-        post_id: test_post.id,
-        user_id: test_user.id
+        post_id: test_post.id
       }.to change {Vote.count}.by (1)
     end
   end
