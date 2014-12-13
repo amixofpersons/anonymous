@@ -9,13 +9,6 @@
 </head>
 <body>
 <div class="header">
-  <% if current_user %>
-      <%= link_to 'Logout', logout_path  %>
-  <% else %>
-      <a href="/signup">Signup</a> | <a href="/login">Login</a>
-  <% end %>
-
-  <span><%= link_to 'Home', root_path%></span>
 
 </div>
 
