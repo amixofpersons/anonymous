@@ -25,5 +25,4 @@ $(document).ready(function(){
   $('.menu-toggle').mouseout(function(event){
     $('.nav-list').hide();
   })
-
 })
