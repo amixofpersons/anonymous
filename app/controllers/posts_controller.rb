@@ -12,12 +12,8 @@ class PostsController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-    p params
     @post = user.posts.new post_params
-    p @post
     if @post.save
-      p @post.errors.full_messages
-      p @post
       redirect_to post_path id: @post.id
     else
       render :new
