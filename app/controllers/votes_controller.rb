@@ -11,6 +11,7 @@ class VotesController < ApplicationController
       else
         redirect_to posts_path
       end
+      redirect_to post_path(post)
     else
       comment = Comment.find(params[:comment_id])
       comment.votes << @vote
