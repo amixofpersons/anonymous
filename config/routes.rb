@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post '/votes/new' => 'votes#create', as: :votes
+
   #SESSIONS routes
   # route for the login form
   get '/login' => 'sessions#new', as: :sessions

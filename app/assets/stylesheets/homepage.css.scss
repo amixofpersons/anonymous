@@ -4,9 +4,9 @@
 
 
 body {
-/*  position:absolute;
+  position:absolute;
   height: 1080px;
-  width: 1920px;*/
+  width: 1920px;
   background: url('homepage.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -17,21 +17,39 @@ body {
 .menu-toggle {
   height: 100px;
   width: 100px;
-  float:right;
+  float: right;
 }
 
+.menu-toggle:hover{
+  cursor: pointer;
+}
 .nav-bar {
   position:relative;
 }
 
 .nav-list {
-  float:right;
-  display:none;
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li{
+  background: #fff;
 }
 
-ul {
-  list-style-type: none;
-  text-align: center;
+ul li:hover {
+  background: #555;
+  color: #fff;
 }
 
 a {

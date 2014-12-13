@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(post)
     else
+      flash[:error] = @comment.errors.full_messages
       render :new
     end
   end
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
     if @comment.update_attributes(comment_params)
       redirect_to post_path(@comment.post)
     else
+      flash[:error] = @comment.errors.full_messages
       render :new
     end
   end
