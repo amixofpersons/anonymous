@@ -31,5 +31,14 @@ describe VotesController do
       post :create, post_id: test_post.id
       expect(assigns(:vote).user).to eq(test_user)
     end
+
+    it "should prevent voting more than once" do
+      session[:user_id] = test_user.id
+      post :create, post_id: test_post.id
+      expect{
+        post :create, post_id: test_post.id
+        }.to_not change {Vote.count}
+
+    end
   end
 end
