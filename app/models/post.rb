@@ -11,4 +11,8 @@ class Post < ActiveRecord::Base
   def number_of_votes
     self.votes.size
   end
+
+  def voters
+    self.votes.map {|vote| vote.user}
+  end
 end
