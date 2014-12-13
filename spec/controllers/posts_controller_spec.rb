@@ -6,6 +6,7 @@ describe PostsController do
 
   it 'should save new Post instances to the database with valid input' do
     expect {
+      session[:user_id] = test_user.id
     post :create, user_id: test_user.id, post: {title: 'my title', body: 'my body text'}
     }.to change {Post.count}.by(1)
   end
