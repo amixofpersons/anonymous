@@ -6,7 +6,11 @@ class Post < ActiveRecord::Base
 
   validates :user_id, :title, :body, presence: true
 
-  def number_of_votes
+  def score
     self.votes.size
+  end
+
+  def voters
+    self.votes.map {|vote| vote.user}
   end
 end
