@@ -5,8 +5,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    p 'from the show method'
-    p params
     @post = Post.find params[:id]
   end
 
