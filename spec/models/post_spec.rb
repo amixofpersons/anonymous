@@ -11,7 +11,6 @@ describe Post do
   it 'should be invalid if not associated with a user' do
     new_post = FactoryGirl.create(:post)
     new_post.valid?
-    # expect(post.errors[:user_id]).to include("Poster can't be blank")
   end
 
 end
