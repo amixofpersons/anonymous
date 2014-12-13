@@ -4,9 +4,9 @@
 
 
 body {
-/*  position:absolute;
+  position:absolute;
   height: 1080px;
-  width: 1920px;*/
+  width: 1920px;
   background: url('homepage.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -20,6 +20,10 @@ body {
   float:right;
 }
 
+.hidden{
+  text-align: left;
+  font-size: 15px;
+}
 .nav-bar {
   position:relative;
 }

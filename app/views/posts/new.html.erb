@@ -1,4 +1,5 @@
 <div class="new-post-form">
+  <%= flash.now[:error] %>
   <ul>
     <%= form_for @post do |f| %>
       <li>
@@ -16,3 +17,4 @@
     <% end %>
   </ul>
 </div>
+
