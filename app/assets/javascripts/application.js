@@ -15,5 +15,9 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-  $('.hidden').hide();
+  $('.nav-list').hide();
+
+  $('.menu-toggle').on('mouseover', function(){
+    $('.nav-list').show();
+  })
 })
