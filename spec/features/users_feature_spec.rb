@@ -1,19 +1,30 @@
 require 'rails_helper'
 
-RSpec.describe "users/new.html.erb", :type => :view do
-  context "on the signup page" do
-    describe "the page" do
-      xit "should take correct parameters" do
-        visit
+feature 'User management' do
+  scenario 'Can create a new user' do
+    visit users_path
 
-        fill_in 'Name', with: 'lulu'
-        fill_in 'Email', with: 'ghoul@2spooky.com'
-        fill_in 'Password', with: 'ghoul'
-        fill_in 'Confirm Password', with: 'ghoul'
+    fill_in 'Name', with: 'lulu'
+    fill_in 'Email', with: 'ghoul@2spooky.com'
+    fill_in 'Password', with: 'ghoul'
+    fill_in 'Password confirmation', with: 'ghoul'
 
-        click_button 'Create User'
-        expect(response).to redirect_to root_path
-      end
-    end
+    expect{
+      click_button 'Create User'
+    }.to change(User, :count)
+  end
+
+  scenario "Doesn't create a user if there are incorrectly filled fields" do
+    visit users_path
+
+    fill_in 'Name', with: 'lulu'
+    fill_in 'Email', with: 'ghoul@2spooky.com'
+    fill_in 'Password', with: 'ghoul'
+    fill_in 'Password confirmation', with: 'bats'
+
+    expect{
+      click_button 'Create User'
+    }.to_not change(User, :count)
   end
 end
+
