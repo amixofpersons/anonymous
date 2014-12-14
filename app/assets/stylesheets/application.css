@@ -21,3 +21,7 @@
 ul, ol {
   list-style: none;
 }
+
+.wrapper {
+  width: 100%;
+}

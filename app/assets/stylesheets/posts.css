@@ -33,6 +33,16 @@
   width: 40%;
 }
 
+.posts, .single-post {
+  position: relative;
+  left: 37%;
+  width: 30%;
+}
+
+.single-post {
+  top: 5em;
+}
+
 ::-webkit-input-placeholder {
    text-align: center;
 }
