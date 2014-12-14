@@ -43,16 +43,30 @@ body {
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
+
 .nav_list_items{
-  background: #fff;
+  background: rgba(211, 198, 198, 0.8);
+  padding: 10px;
+  text-align: right;
+
 }
 
 .nav_list_items:hover {
   background: #555;
   color: #fff;
+
+}
+.nav_list_items a:hover{
+  color: white
+}
+
+.nav_list_items a {
+  font-size: 1.5em;
 }
 
 a {
+  color:black;
+  font-size:1em;
   text-decoration:none;
 }
 
