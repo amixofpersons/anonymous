@@ -1,13 +1,15 @@
 <div class='posts'>
 <% @posts.each do |post| %>
   <h2>
-    <span class = "vote">
-    <% if already_voted?(post)%>
-        <%=post.score %> |
-      <%else%>
-        <%= post.score %> |
-        <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: post.id), method: :post, remote: true%>
-      <%end%>
+    <span class='vote'>
+      <span id = "post-vote-<%=post.id%>">
+        <% if already_voted?(post)%>
+            <%=post.score %> |
+          <%else%>
+            <%= post.score %> |
+            <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: post.id), method: :post, remote: true%>
+          <%end%>
+      </span>
     </span>
   <img src="/assets/dalek_1.png"></img>
   <%= link_to post.title, post_path(post) %>
