@@ -1,12 +1,9 @@
 $(document).ready(function(){
-  $('.nav-list').hide();
-
-  $('.menu-toggle').mouseover(function(event){
-    event.preventDefault();
+  $('.menu-toggle').mouseover(function() {
     $('.nav-list').show();
   });
 
-  $('.menu-toggle').mouseout(function(event){
+  $('.menu-toggle').mouseout(function(){
     $('.nav-list').hide();
   });
 });
