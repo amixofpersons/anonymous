@@ -3,7 +3,14 @@ class PostsController < ApplicationController
 
   def new
     if current_user
-      @post = Post.new
+      respond_to do |format|
+        format.html {
+          @post = Post.new
+        }
+        format.js {
+          @post = Post.new
+        }
+      end
     else
       redirect_to login_path
     end
