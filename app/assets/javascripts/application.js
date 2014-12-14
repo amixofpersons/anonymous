@@ -26,7 +26,17 @@ $(document).ready(function(){
     $('.nav-list').hide();
   })
 
+  $('.vote').on('click', function(){
+    event.preventDefault();
+    var $target = $(event.target)
 
+    $.ajax{
+      type: "POST"
+      url: target.attr("action")
+    }
+    .done(function(){
+      console.log("You've made it this far kid");
+    })
 
-
+  })
 })
