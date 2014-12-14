@@ -17,6 +17,14 @@ describe CommentsController do
     end
   end
 
+  context "create" do
+    it "creates with valid attributes" do
+      expect {
+        post :create, :post_id => test_post.id, :comment => FactoryGirl.attributes_for(:comment)
+      }.to change {Comment.count}.by(1)
+      expect(response).to be_redirect
+    end
 
+end
 
 end
