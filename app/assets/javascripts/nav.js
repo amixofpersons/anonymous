@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.nav-list').show();
   });
 
-  $('.menu-toggle').mouseout(function(){
-    $('.nav-list').hide();
+  $('.menu-toggle').mouseleave(function(){
+    $('.nav-list').css('display', 'none')
   });
 });
