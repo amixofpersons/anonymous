@@ -18,3 +18,7 @@
   font-family: 'Josefin Slab', serif;
 }
 
+ul, ol {
+  list-style: none;
+}
+
