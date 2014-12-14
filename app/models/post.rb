@@ -11,6 +11,6 @@ class Post < ActiveRecord::Base
   end
 
   def voters
-    self.votes.map {|vote| vote.user}
+    self.votes.includes(:user).map(&:user)
   end
 end
