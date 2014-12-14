@@ -29,7 +29,6 @@ $(document).ready(function(){
   $('.vote').on('click', function(){
     event.preventDefault();
     var $target = $(event.target)
-    console.log("You've made it this far kid");
 
     $.ajax({
       url: $target.attr("method"),
