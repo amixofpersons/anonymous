@@ -1,3 +1,4 @@
+<div class='single-post'>
 <h2>
   <span class = "vote">
     <% if already_voted?(@post)%>
@@ -11,22 +12,23 @@
 </h2>
 <p><%= @post.body %></p>
 
-<h3>Comments</h3>
+  <h3>Comments</h3>
 
-<ul>
-  <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id) do |f| %>
-  <li>
-    <% f.label :content %>
-    <%= f.text_area :content %>
-  </li>
-  <li>
-    <%= f.submit "Submit" %>
-  </li>
+  <ul>
+    <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id) do |f| %>
+    <li>
+      <% f.label :content %>
+      <%= f.text_area :content %>
+    </li>
+    <li>
+      <%= f.submit "Submit" %>
+    </li>
+    <% end %>
+  </ul>
+
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.content %>
+      <%= link_to image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/edit.png", size:"20x20"), edit_post_comment_path(comment.post, comment) %>
+      <%= link_to image_tag("http://png-4.findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png", size:"23x23"), post_comment_path(comment.post, comment), :method => :delete %></p>
   <% end %>
-</ul>
-
-<% @post.comments.each do |comment| %>
-  <p><%= comment.content %>
-    <%= link_to image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/edit.png", size:"20x20"), edit_post_comment_path(comment.post, comment) %>
-    <%= link_to image_tag("http://png-4.findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png", size:"23x23"), post_comment_path(comment.post, comment), :method => :delete %></p>
-<% end %>
+</div>
