@@ -18,6 +18,7 @@ describe UsersController, :type => :controller do
 
   describe "#show" do
     it "shows a user all of their 'likes'" do
+      session[:user_id] = test_user.id
       get :show, id: test_user.id
       expect(assigns(:votes)).to eq(test_user.votes)
     end
