@@ -11,6 +11,7 @@
           <li class = "nav_list_items"><%= link_to 'Home', root_path%></li>
           <% if current_user %>
             <li class = "nav_list_items"><%= link_to 'Logout', logout_path  %></li>
+            <li class = "nav_list_items"><a href="/posts">All Secrets</a></li>
           <% else %>
             <li class = "nav_list_items"><a href="/login">Login</a></li>
             <li class = "nav_list_items"><a href="/signup">Signup</a></li>

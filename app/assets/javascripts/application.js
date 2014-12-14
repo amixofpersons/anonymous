@@ -29,11 +29,12 @@ $(document).ready(function(){
   $('.vote').on('click', function(){
     event.preventDefault();
     var $target = $(event.target)
+    console.log("You've made it this far kid");
 
-    $.ajax{
+    $.ajax({
+      url: $target.attr("action"),
       type: "POST"
-      url: target.attr("action")
-    }
+    })
     .done(function(){
       console.log("You've made it this far kid");
     })
