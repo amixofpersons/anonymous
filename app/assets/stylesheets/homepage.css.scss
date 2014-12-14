@@ -4,9 +4,9 @@
 
 
 body {
-  position:absolute;
-  height: 1080px;
-  width: 1920px;
+  // position:absolute;
+  // height: 1080px;
+  // width: 1920px;
   background: url('homepage.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -25,6 +25,7 @@ body {
 }
 .nav-bar {
   position:relative;
+  display: block;
 }
 
 .hidden{
@@ -57,22 +58,28 @@ body {
 }
 
 a {
+  color: #333;
   text-decoration:none;
 }
 
-.header {
-  float:left;
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  // float:left;
   font-size: 1em;
   padding-left: 3em;
 }
 
 .secrets {
   position:relative;
-  top:30em;
-  height: 400px;
+  top: 20em;
+  left: 5em;
+  // height: 400px;
   margin: auto;
   text-align: center;
-  visibility: visible;
+  // visibility: visible;
 }
 
 .secrets a {
