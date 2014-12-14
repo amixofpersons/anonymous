@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 describe VotesController do
   let (:test_user) {FactoryGirl.create :user}
   let (:test_post) {FactoryGirl.create :post}
@@ -38,7 +37,6 @@ describe VotesController do
       expect{
         post :create, post_id: test_post.id
         }.to_not change {Vote.count}
-
     end
   end
 end

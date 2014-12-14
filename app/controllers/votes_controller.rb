@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
-
   def create
+
     user = current_user
     @vote = user.votes.new
     respond_to do |format|
@@ -27,7 +27,6 @@ class VotesController < ApplicationController
       end
     end
   end
-
   private
     def vote_params
       params.require(:vote).permit(:post_id, :comment_id)
