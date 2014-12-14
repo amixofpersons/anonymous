@@ -1,9 +1,9 @@
 $(document).ready(function(){
-  $('.menu-toggle').mouseover(function() {
-    $('.nav-list').show();
+  $('.menu-toggle').mouseenter(function() {
+    $('.nav-list').css('display', 'inline')
   });
 
-  $('.menu-toggle').mouseout(function(){
-    $('.nav-list').hide();
+  $('.menu-toggle').mouseleave(function(){
+    $('.nav-list').css('display', 'none')
   });
 });
