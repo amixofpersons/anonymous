@@ -13,31 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require nav
+//= require vote
 //= require_tree .
-$(document).ready(function(){
-  $('.nav-list').hide();
-
-  $('.menu-toggle').mouseover(function(event) {
-    event.preventDefault();
-    $('.nav-list').show();
-  });
-
-  $('.menu-toggle').mouseout(function(event){
-    $('.nav-list').hide();
-  })
-
-  $('.vote').bind('click', function(){
-    event.preventDefault();
-    var $target = $(event.target);
-    console.log($target);
-
-    // $.ajax({
-    //   url: $target.attr("method"),
-    //   type: "POST"
-    // })
-    // .done(function(){
-    //   console.log("You've made it this far kid");
-    // })
-
-  })
-})
