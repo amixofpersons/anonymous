@@ -8,14 +8,14 @@ RSpec.describe SessionsController, :type => :controller do
 
   describe "create" do
     it "creates a new session" do
-    post :create, user_name: user.name, password: user.password
+    post :create, session: {user_name: user.name, user_password: user.password}
     expect(response).to redirect_to root_path
     end
   end
 
   describe "create" do
     it "doesn't creates a new session with invalid fields" do
-    post :create, user_name: "Troll", password: "trolololoololoololo"
+    post :create, name: "Troll", password: "trolololoololoololo"
     expect(response).to redirect_to sessions_path
     end
   end
