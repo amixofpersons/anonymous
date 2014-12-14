@@ -1,7 +1,10 @@
 <div class="homepage">
 
+  <div id="new-post-form"></div>
+
   <div class="secrets">
-    <%= link_to 'Share Secrets', new_post_path, id: "new-secret-link" %>
+    <%= link_to 'Share Secrets', new_post_path, remote: true, id: "new-secret-link" %>
   </div>
+
 
 </div>
