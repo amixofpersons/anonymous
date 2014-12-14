@@ -26,17 +26,18 @@ $(document).ready(function(){
     $('.nav-list').hide();
   })
 
-  $('.vote').on('click', function(){
+  $('.vote').bind('click', function(){
     event.preventDefault();
-    var $target = $(event.target)
+    var $target = $(event.target);
+    console.log($target);
 
-    $.ajax({
-      url: $target.attr("method"),
-      type: "POST"
-    })
-    .done(function(){
-      console.log("You've made it this far kid");
-    })
+    // $.ajax({
+    //   url: $target.attr("method"),
+    //   type: "POST"
+    // })
+    // .done(function(){
+    //   console.log("You've made it this far kid");
+    // })
 
   })
 })

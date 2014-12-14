@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:user_name])
-
+    user = User.find_by(name: params[:name])
+    # binding.pry
     if user && user.authenticate(params[:password])
       login(user)
       redirect_to root_path
@@ -21,4 +21,8 @@ class SessionsController < ApplicationController
     redirect_to root_path, :notice => 'Logged Out!'
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:name,:password)
+  end
 end
