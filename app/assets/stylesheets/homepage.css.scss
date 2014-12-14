@@ -43,11 +43,11 @@ body {
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
-ul li{
+.nav_list_items{
   background: #fff;
 }
 
-ul li:hover {
+.nav_list_items:hover {
   background: #555;
   color: #fff;
 }

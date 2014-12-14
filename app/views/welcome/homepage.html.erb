@@ -8,13 +8,13 @@
     <div class = 'menu-toggle'>
       <img alt="menu" src="/assets/menu-6x.png">
         <ul class="nav-list">
-          <li><%= link_to 'Home', root_path%></li>
+          <li class = "nav_list_items"><%= link_to 'Home', root_path%></li>
           <% if current_user %>
-            <li><%= link_to 'Logout', logout_path  %></li>
+            <li class = "nav_list_items"><%= link_to 'Logout', logout_path  %></li>
           <% else %>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-            <li><a href="/posts">All Secrets</a></li>
+            <li class = "nav_list_items"><a href="/login">Login</a></li>
+            <li class = "nav_list_items"><a href="/signup">Signup</a></li>
+            <li class = "nav_list_items"><a href="/posts">All Secrets</a></li>
           <% end %>
         </ul>
       </img>
