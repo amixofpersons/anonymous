@@ -24,11 +24,24 @@ class PostsController < ApplicationController
   def create
     user = current_user
     @post = user.posts.new post_params
-    if @post.save
-      redirect_to post_path id: @post.id
-    else
-      flash[:error] = @post.errors.full_messages
-      render :new
+
+    respond_to do |format|
+      format.html {
+        if @post.save
+          redirect_to post_path id: @post.id
+        else
+          flash[:error] = @post.errors.full_messages
+          render :new
+        end
+      }
+
+      format.js {
+        if @post.save
+        else
+          flash[:error] = @post.errors.full_messages
+          render :new
+        end
+      }
     end
   end
 
