@@ -15,7 +15,7 @@ RSpec.describe SessionsController, :type => :controller do
 
   describe "create" do
     it "doesn't creates a new session with invalid fields" do
-    post :create, name: "Troll", password: "trolololoololoololo"
+    post :create, session: {name: "Troll", password: "trolololoololoololo"}
     expect(response).to redirect_to sessions_path
     end
   end

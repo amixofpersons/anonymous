@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new', as: :users
   post '/signup' => 'users#create'
 
+  # User Likes
+  get '/likes' => 'users#show', as: :likes
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

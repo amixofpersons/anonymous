@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @votes = current_user.votes
+  end
+
   private
     def user_params
       params.require(:user).permit(:name,:email,:password,:password_confirmation)
