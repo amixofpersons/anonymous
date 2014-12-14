@@ -48,6 +48,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+    @array = [2,3,4,5,6]
     render :show
   end
 
