@@ -6,7 +6,8 @@ class VotesController < ApplicationController
     if params[:post_id]
       post = Post.find(params[:post_id])
       post.votes << @vote unless already_voted?(post)
-
+      post = Post.find(params[:post_id])
+      post.votes << @vote unless already_voted?(post)
       redirect_to :back
     else
       comment = Comment.find(params[:comment_id])

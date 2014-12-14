@@ -29,21 +29,14 @@ $(document).ready(function(){
   $('.vote').bind('click', function(){
     event.preventDefault();
     var $target = $(event.target);
+    console.log($target);
+
     $.ajax({
-      url: "<%= posts_controller_votes_path %>",
-      type: "POST"
+      type: "POST",
+      url: $target.attr("votes_path")
     })
     .done(function(response){
-
+      $(response).html("some text")
     })
-
-    // $.ajax({
-    //   url: $target.attr("method"),
-    //   type: "POST"
-    // })
-    // .done(function(){
-    //   console.log("You've made it this far kid");
-    // })
-
   })
 })
