@@ -62,7 +62,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order('created_at DESC')
+    respond_to do |format|
+      format.html{@posts = Post.order('created_at DESC')}
+      format.js{ @posts = Post.order('created_at DESC')}
+    end
   end
 
   private
