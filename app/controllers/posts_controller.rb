@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     @comment = Comment.new
+    @array = [2,3,4,5,6]
   end
 
   def create
