@@ -32,7 +32,7 @@ $(document).ready(function(){
     console.log("You've made it this far kid");
 
     $.ajax({
-      url: $target.attr("action"),
+      url: $target.attr("method"),
       type: "POST"
     })
     .done(function(){
