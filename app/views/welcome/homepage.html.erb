@@ -1,26 +1,4 @@
 <div class="homepage">
-  <div class="nav-bar">
-
-    <div class="header">
-      <h1>Anonymous</h1>
-    </div>
-
-    <div class = 'menu-toggle'>
-      <img alt="menu" src="/assets/menu-6x.png">
-        <ul class="nav-list">
-          <li class = "nav_list_items"><%= link_to 'Home', root_path%></li>
-          <% if current_user %>
-            <li class = "nav_list_items"><%= link_to 'Logout', logout_path  %></li>
-            <li class = "nav_list_items"><a href="/posts">All Secrets</a></li>
-          <% else %>
-            <li class = "nav_list_items"><a href="/login">Login</a></li>
-            <li class = "nav_list_items"><a href="/signup">Signup</a></li>
-            <li class = "nav_list_items"><a href="/posts">All Secrets</a></li>
-          <% end %>
-        </ul>
-      </img>
-    </div>
-  </div>
 
   <div class="secrets">
     <a href="/posts/new">Share Secrets</a>
