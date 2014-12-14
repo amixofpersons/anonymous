@@ -7,8 +7,8 @@ class VotesController < ApplicationController
     respond_to do |format|
       if params[:post_id]
         format.html {
-          post = Post.find(params[:post_id])
-          post.votes << @vote unless already_voted?(post)
+          @post = Post.find(params[:post_id])
+          @post.votes << @vote unless already_voted?(@post)
           redirect_to :back
         }
         format.js {
