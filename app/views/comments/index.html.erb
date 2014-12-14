@@ -1,3 +1,5 @@
 <% @comments.each do |comment| %>
   <p><%= comment.content %></p>
+  <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
+  <%= link_to 'delete', post_comment_path %>
 <% end %>
