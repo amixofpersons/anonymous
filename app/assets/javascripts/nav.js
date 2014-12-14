@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.nav-list').hide();
 
-  $('.menu-toggle').mouseover(function(event) {
+  $('.menu-toggle').mouseenter(function(event){
     event.preventDefault();
     $('.nav-list').show();
   });
