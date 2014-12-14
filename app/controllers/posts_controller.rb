@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order('created_at DESC')
+    @posts = recent_posts
   end
 
   private
