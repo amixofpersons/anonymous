@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.vote').on('click', function(event){
+  $('span.vote').on('click', function(event){
     event.preventDefault();
   });
 });
