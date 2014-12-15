@@ -1,31 +1,29 @@
 
 
-<table class="choice-post">
-  <tr>
+<div class="choice-post">
 
-    <td>
       <span class = "vote">
           <span id = "post-vote-<%=@post.id%>" class="vote-number">
             <% if already_voted?(@post)%>
-              <h2><%= @post.score %></h2>
+
+                <h2><%= @post.score %></h2>
+
             <% else %>
-              <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
-              <h2><%= @post.score %></h2>
+
+            <h2><%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
+                  <%= @post.score %></h2>
+
             <% end %>
           </span>
       </span>
-    </td>
 
-    <td>
-      <img src = '/ assets/dalek_1.png'
+
       <h1><%= @post.title %></h1>
       <p><%= @post.body %></p>
-    </td>
-
-  </tr>
-</table>
+</div>
 <div class='single-post'>
   <h3>Comments</h3>
+  <% if current_user %>
   <ul id="comments">
     <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id), class: "comment-submit" do |f| %>
     <li>
@@ -37,7 +35,7 @@
     </li>
     <% end %>
   </ul>
-
+  <% end %>
 
 <table class= "comment-table">
   <% @post.comments.each do |comment| %>
