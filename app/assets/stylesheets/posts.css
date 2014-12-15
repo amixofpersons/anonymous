@@ -46,3 +46,18 @@
 ::-webkit-input-placeholder {
    text-align: center;
 }
+
+table {
+  background: rgba(255,255,255,0.3);
+  width:100%;
+  padding:10px;
+}
+
+table tr {
+  border-top: 1px solid #6D8285;
+}
+
+
+#edit_buttons {
+  float: right;
+}
