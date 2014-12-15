@@ -11,10 +11,13 @@ body {
   background-size: cover;
 }
 
+
+
 .menu-toggle {
   height: 100px;
   width: 100px;
   float: right;
+  margin-top: 20px;
 }
 
 .menu-toggle:hover{
@@ -22,6 +25,7 @@ body {
 }
 
 .nav-list {
+
   position: relative;
   right: 1.25em;
   display: none;
@@ -63,6 +67,8 @@ a:hover {
 header {
   font-size: 1em;
   padding-left: 3em;
+  width: 20%;
+  float: left;
 }
 
 .secrets {

@@ -1,30 +1,48 @@
-<div class='single-post'>
 
-<h2>
-  <span class = "vote">
-    <span id = "post-vote-<%=@post.id%>">
-      <% if already_voted?(@post)%>
-        <%= @post.score %>
-      <% else %>
-      <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%><%= @post.score %>
-      <% end %>
+
+<table class="choice-post">
+  <tr>
+
+
+    <span class = "vote">
+        <span id = "post-vote-<%=@post.id%>" class="vote-number">
+
+          <% if already_voted?(@post)%>
+            <td><h2><%= @post.score %></h2></td>
+          <% else %>
+
+          <td>
+          <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
+          </td>
+
+          <td>
+            <h2><%= @post.score %></h2>
+          </td>
+          <% end %>
+        </span>
     </span>
-  </span>
-  <br>
-  <img src="/assets/dalek_1.png"></img>
-  <%= @post.title %>
-</h2>
-<p><%= @post.body %></p>
 
+    <!-- <td>
+      <img src="/assets/dalek_1.png" class="dalek"></img>
+    </td> -->
+
+    <td>
+      <h1><%= @post.title %></h1>
+      <p><%= @post.body %></p>
+    </td>
+
+  </tr>
+</table>
+<div class='single-post'>
   <h3>Comments</h3>
-  <ul>
-    <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id) do |f| %>
+  <ul id="comments">
+    <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id), class: "comment-submit" do |f| %>
     <li>
       <% f.label :content %>
-      <%= f.text_area :content %>
+      <%= f.text_area :content, class: "comment-submit" %>
     </li>
     <li>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", class: "comment-button" %>
     </li>
     <% end %>
   </ul>
@@ -34,18 +52,22 @@
   <% @post.comments.each do |comment| %>
   <tr>
     <td>
-    <img src="/assets/dalek_<%=rand(2..6)%>.png"></img>
-  </td>
-  <td>
-    <span class = "vote">
-    <span id = "comment-vote-<%=comment.id%>">
-      <% if already_voted?(comment)%>
-        <%= comment.score %>
-      <% else %>
-      <%= link_to image_tag("caret8.png", :border => 0), votes_path(comment_id: comment.id), method: :post, remote: true%> <%= comment.score %>
-      <% end %>
-    </span>
-  </span>
+      <img src="/assets/dalek_<%=rand(2..6)%>.png"></img>
+    </td>
+
+    <td>
+      <span class = "vote">
+        <span id = "comment-vote-<%=comment.id%>">
+          <% if already_voted?(comment)%>
+            <%= comment.score %>
+          <% else %>
+          <%= link_to image_tag("caret8.png", :border => 0), votes_path(comment_id: comment.id), method: :post, remote: true%> <%= comment.score %>
+          <% end %>
+        </span>
+      </span>
+    </td>
+
+    <td>
       <p><%= comment.content %>
         <% if current_user.id == comment.user_id %>
         <span id="edit_buttons">

@@ -24,3 +24,7 @@ ul, ol {
 .wrapper {
   width: 100%;
 }
+
+.container {
+  clear:both;
+}
