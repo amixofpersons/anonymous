@@ -7,17 +7,18 @@
       <span class = "vote">
           <span id = "post-vote-<%=@post.id%>" class="vote-number">
             <% if already_voted?(@post)%>
-              <h2><%= @post.score %></h2>
+              <h2><%= @post.score %></h2></td>
             <% else %>
+            <td>
               <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
-              <h2><%= @post.score %></h2>
+            </td><td><h2><%= @post.score %></h2></td>
             <% end %>
           </span>
       </span>
     </td>
 
     <td>
-      <img src = '/ assets/dalek_1.png'
+
       <h1><%= @post.title %></h1>
       <p><%= @post.body %></p>
     </td>
