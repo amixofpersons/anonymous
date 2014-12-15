@@ -1,21 +1,39 @@
-<div class='single-post'>
 
-<h2>
-  <span class = "vote">
-    <span id = "post-vote-<%=@post.id%>">
-      <% if already_voted?(@post)%>
-        <%= @post.score %>
-      <% else %>
-      <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%><%= @post.score %>
-      <% end %>
+
+<table class="choice-post">
+  <tr>
+
+
+    <span class = "vote">
+        <span id = "post-vote-<%=@post.id%>" class="vote-number">
+
+          <% if already_voted?(@post)%>
+            <td><h2><%= @post.score %></h2></td>
+          <% else %>
+
+          <td>
+          <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
+          </td>
+
+          <td>
+            <h2><%= @post.score %></h2>
+          </td>
+          <% end %>
+        </span>
     </span>
-  </span>
-  <br>
-  <img src="/assets/dalek_1.png"></img>
-  <%= @post.title %>
-</h2>
-<p><%= @post.body %></p>
 
+    <td>
+      <img src="/assets/dalek_1.png" class="dalek"></img>
+    </td>
+
+    <td>
+      <h1><%= @post.title %></h1>
+      <p><%= @post.body %></p>
+    </td>
+
+  </tr>
+</table>
+<div class='single-post'>
   <h3>Comments</h3>
   <ul id="comments">
     <%= form_for @comment, :url=> post_comments_path(:post_id => @post.id), class: "comment-submit" do |f| %>
