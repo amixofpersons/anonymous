@@ -1,17 +1,21 @@
+<div class="sign-up-container">
+
+<h1>Sign Up!</h1>  
 <%= flash.now[:error] %>
 
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :name, placeholder: "Name", class: "user-input" %>
+<br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.text_field :email, placeholder: "Email", class: "user-input" %>
+<br>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password, placeholder: "Password", class: "user-input" %>
+<br>
 
-  <%= f.submit %>
+  <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "user-input" %>
+<br>
+  <%= f.submit nil, :class => "new-user"%>
 <% end %>
+</div>
