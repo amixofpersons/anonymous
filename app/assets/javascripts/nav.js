@@ -1,12 +1,8 @@
 $(document).ready(function(){
-  $('.nav-list').hide();
-
-  $('.menu-toggle').mouseover(function(event){
-    event.preventDefault();
-    $('.nav-list').show();
+  $('.menu-toggle').mouseenter(function(){
+    $(".nav-list").slideToggle("fast");
   });
-
-  $('.menu-toggle').mouseout(function(event){
-    $('.nav-list').hide();
+  $('.menu-toggle').mouseleave(function(){
+    $(".nav-list").slideToggle("fast");
   });
 });
