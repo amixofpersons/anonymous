@@ -1,16 +1,23 @@
 <div class='likes'>
-  <h2><%= current_user.name %>'s Likes</h2>
-<div class='liked-posts'>
-  <h2>Liked Posts</h2>
-  <% @votes.where(votable_type: 'Post').each do |post_vote| %>
-    <%= simple_format link_to post_vote.votable.title, post_path(post_vote.votable)  %>
-  <% end %>
-</div>
 
-<div class='liked-comments'>
-  <h2>Liked Comments</h2>
-  <% @votes.where(votable_type: 'Comment').each do |comment_vote| %>
-    <%= simple_format link_to comment_vote.votable.content, post_path(comment_vote.votable.post)  %>
-  <% end %>
-</div>
+  <div class='user-posts'>
+    <h2><%= current_user.name %>'s Posts</h2>
+      <% current_user.posts.each do |post| %>
+        <%= simple_format link_to post.title, post_path(post) %>
+      <% end %>
+  </div>
+
+  <div class='liked-posts'>
+    <h2> <%= current_user.name %>'s Liked Posts</h2>
+    <% @votes.where(votable_type: 'Post').each do |post_vote| %>
+      <%= simple_format link_to post_vote.votable.title, post_path(post_vote.votable)  %>
+    <% end %>
+  </div>
+
+  <div class='liked-comments'>
+    <h2> <%= current_user.name %>'s Liked Comments</h2>
+    <% @votes.where(votable_type: 'Comment').each do |comment_vote| %>
+      <%= simple_format link_to comment_vote.votable.content, post_path(comment_vote.votable.post)  %>
+    <% end %>
+  </div>
 </div>

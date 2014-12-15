@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
 
   # User Likes
-  get '/likes' => 'users#show', as: :likes
+  get '/profile' => 'users#show', as: :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
