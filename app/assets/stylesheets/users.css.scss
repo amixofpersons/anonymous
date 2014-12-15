@@ -12,3 +12,34 @@
   display: block;
   width: 20%;
 }
+
+.new-user  {
+  opacity: 1;
+  font-size: 1em;
+  height: 50px;
+  text-decoration: none;
+  border: solid rgb(75, 78, 79) .190em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: .2em;
+  color: black;
+  width: 40%;
+  margin: 10px;
+}
+
+
+.sign-up-container{
+  text-align: center;
+
+}
+.vertical-align{
+  margin-top: 50px;
+}
+
+
+.user-input {
+  width: 40%;
+  margin:10px;
+  height: 40px;
+  text-align: center;
+}

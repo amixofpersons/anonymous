@@ -24,7 +24,7 @@
  .new-post input[type=submit] {
   opacity: 1;
   font-size: 1em;
-  height: 30px;
+  height: 50px;
   text-decoration: none;
   border: solid rgb(75, 78, 79) .190em;
   padding-right: 1em;
