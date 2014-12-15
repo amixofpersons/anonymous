@@ -1,6 +1,7 @@
 .new_post {
   position:relative;
-  top:20em;
+  top: 10em;
+  right: 3em;
   height: 400px;
   width: 400px;
   margin: auto;
