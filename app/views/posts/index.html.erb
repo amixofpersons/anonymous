@@ -1,6 +1,6 @@
 <div class='posts'>
 <% @posts.each do |post| %>
-  <h2>
+
     <span class='vote'>
       <span id = "post-vote-<%=post.id%>">
         <% if already_voted?(post)%>
@@ -13,7 +13,7 @@
     </span>
   <img src="/assets/dalek_1.png"></img>
   <%= link_to post.title, post_path(post) %>
-  </h2>
+
   <p><%= post.body %></p>
 <% end %>
 </div>
