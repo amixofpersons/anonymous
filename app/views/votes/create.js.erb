@@ -1,1 +1,7 @@
-$("#post-vote-<%= @post.id%>").html("<%= @post.score %>")
+<% if @post %>
+  $("#post-vote-<%= @post.id%>").html("<%= @post.score %>");
+<% else %>
+  $("#comment-vote-<%= @comment.id %>").html("<%= @comment.score %>");
+<% end %>
+
+
