@@ -3,28 +3,18 @@
 <table class="choice-post">
   <tr>
 
-
-    <span class = "vote">
-        <span id = "post-vote-<%=@post.id%>" class="vote-number">
-
-          <% if already_voted?(@post)%>
-            <td><h2><%= @post.score %></h2></td>
-          <% else %>
-
-          <td>
-          <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
-          </td>
-
-          <td>
-            <h2><%= @post.score %></h2>
-          </td>
-          <% end %>
-        </span>
-    </span>
-
-    <!-- <td>
-      <img src="/assets/dalek_1.png" class="dalek"></img>
-    </td> -->
+    <td>
+      <span class = "vote">
+          <span id = "post-vote-<%=@post.id%>" class="vote-number">
+            <% if already_voted?(@post)%>
+              <h2><%= @post.score %></h2>
+            <% else %>
+              <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: @post.id), method: :post, remote: true%>
+              <h2><%= @post.score %></h2>
+            <% end %>
+          </span>
+      </span>
+    </td>
 
     <td>
       <h1><%= @post.title %></h1>
