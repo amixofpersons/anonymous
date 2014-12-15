@@ -22,7 +22,8 @@ body {
 }
 
 .nav-list {
-  // text-align: left;
+  position: relative;
+  right: 1.25em;
   display: none;
   margin: 0;
   padding: 15px 4px 17px 0;
@@ -60,7 +61,6 @@ a:hover {
 }
 
 header {
-  // float:left;
   font-size: 1em;
   padding-left: 3em;
 }
@@ -69,10 +69,8 @@ header {
   position:relative;
   top: 20em;
   left: 5em;
-  // height: 400px;
   margin: auto;
   text-align: center;
-  // visibility: visible;
 }
 
 .secrets a {
