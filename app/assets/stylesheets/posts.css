@@ -71,17 +71,27 @@
 }
 
 .choice-post {
-  width:50%;
+  max-width:50%;
   margin-left: auto;
   margin-right: auto;
   top: 40%;
 }
 
+.choice-post td{
+  padding: 10px;
+}
 .choice-post h2 {
   font-size:5em;
+  text-align:center;
 }
 .choice-post h1 {
   font-size:3em;
+  text-align:center;
+}
+
+.choice-post p {
+  text-align: center;
+  font-size: 24px;
 }
 
 .comment-table {
@@ -129,6 +139,6 @@
 .post-table {
   background: rgba(255,255,255,0.3);
   width:100%;
-  padding:10px 10px 10px 25px;
+  padding:10px 30px 10px 35px;
   margin-bottom: 30px;
 }
