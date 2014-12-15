@@ -16,7 +16,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user
     @votes = current_user.votes
+    else
+      redirect_to root_path
+    end
   end
 
   private
