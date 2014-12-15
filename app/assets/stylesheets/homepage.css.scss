@@ -4,9 +4,6 @@
 
 
 body {
-/*  position:absolute;
-  height: 1080px;
-  width: 1920px;*/
   background: url('homepage.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -14,49 +11,75 @@ body {
   background-size: cover;
 }
 
+
+
 .menu-toggle {
   height: 100px;
   width: 100px;
-  float:right;
+  float: right;
+  margin-top: 20px;
 }
 
-.nav-bar {
-  position:relative;
+.menu-toggle:hover{
+  cursor: pointer;
 }
 
 .nav-list {
-  float:right;
-  display:none;
+
+  position: relative;
+  right: 1.25em;
+  display: none;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
 }
 
-ul {
-  list-style-type: none;
-  text-align: center;
+.nav_list_items{
+  background: rgba(211, 198, 198, 0.8);
+  padding: 10px;
+  text-align: left;
+
+}
+
+.nav_list_items:hover {
+  background: #555;
+  color: #fff;
+
+}
+.nav_list_items a:hover{
+  color: white
+}
+
+.nav_list_items a {
+  font-size: 1.5em;
 }
 
 a {
+  color:black;
+  font-size:1em;
   text-decoration:none;
-  font-family: 'Josefin Slab', serif;
 }
 
-.header {
-  float:left;
-  font-family: 'Josefin Slab', serif;
+a:hover {
+  text-decoration: underline;
+}
+
+header {
   font-size: 1em;
   padding-left: 3em;
+  width: 20%;
+  float: left;
 }
 
 .secrets {
   position:relative;
-  top:30em;
-  height: 400px;
+  top: 15em;
+  // left: 1em;
   margin: auto;
   text-align: center;
-  visibility: visible;
 }
 
 .secrets a {
-  font-family: 'Josefin Slab', serif;
   font-size: 2em;
   margin-right: 2.7em;
   text-decoration: none;

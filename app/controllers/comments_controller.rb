@@ -1,17 +1,21 @@
 class CommentsController < ApplicationController
 
   def new
+
     @post = Post.find params[:post_id]
     @comment = Comment.new
+
   end
 
 
   def create
     post = Post.find params[:post_id]
-    @comment = post.comments.build params[:comment]
+    @comment = post.comments.build comment_params
+    @comment.user_id =  current_user.id
     if @comment.save
-      redirect_to post_path
+      redirect_to post_path(post)
     else
+      flash[:error] = @comment.errors.full_messages
       render :new
     end
   end
@@ -26,14 +30,16 @@ class CommentsController < ApplicationController
     if @comment.update_attributes(comment_params)
       redirect_to post_path(@comment.post)
     else
+      flash[:error] = @comment.errors.full_messages
       render :new
     end
   end
 
   def destroy
+    post = Post.find params[:post_id]
     comment = Comment.find params[:id]
     comment.destroy
-    redirect_to post_path
+    redirect_to post_path(post.id)
   end
 
   def index

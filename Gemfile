@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'pry'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,3 +46,7 @@ gem 'faker', group: [:development, :test]
 
 #For generating test models
 gem "factory_girl_rails", group: [:development, :test]
+
+group :test do
+  gem 'capybara'
+end

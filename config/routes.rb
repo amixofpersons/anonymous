@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post '/votes/new' => 'votes#create', as: :votes
+
   #SESSIONS routes
   # route for the login form
   get '/login' => 'sessions#new', as: :sessions
@@ -17,6 +19,9 @@ Rails.application.routes.draw do
   # USERS SIGNUP
   get '/signup' => 'users#new', as: :users
   post '/signup' => 'users#create'
+
+  # User Likes
+  get '/profile' => 'users#show', as: :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

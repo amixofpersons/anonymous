@@ -4,9 +4,13 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :votes, as: :votable
 
-  validates :poster, presence: true
+  validates :user_id, :title, :body, presence: true
 
-  def number_of_votes
+  def score
     self.votes.size
+  end
+
+  def voters
+    self.votes.includes(:user).map(&:user)
   end
 end

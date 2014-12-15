@@ -1,0 +1,3 @@
+$('.secrets').fadeOut('slow', function(){
+    $(this).replaceWith("<%= j (render 'form') %>").fadeIn('slow');
+  });

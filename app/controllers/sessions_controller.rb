@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:session][:user_name])
-
+    # binding.pry
     if user && user.authenticate(params[:session][:user_password])
-      session[:user_id] = user.id
+      login(user)
       redirect_to root_path
     else
       flash[:error] = "Invalid Login."
@@ -17,8 +17,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to login_path, :notice => 'Logged Out!'
+    logout
+    redirect_to :back
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:name,:password)
+  end
 end

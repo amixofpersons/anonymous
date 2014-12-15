@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      login(@user)
       redirect_to posts_path
     else
       flash[:error] = @user.errors.full_messages
@@ -14,7 +15,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
+  def show
+    @votes = current_user.votes
   end
 
   private

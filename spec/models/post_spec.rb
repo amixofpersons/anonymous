@@ -8,10 +8,9 @@ describe Post do
     expect(Post.all.count).to eq 1
   end
 
-  xit 'should be invalid if not associated with a user' do
+  it 'should be invalid if not associated with a user' do
     new_post = FactoryGirl.create(:post)
     new_post.valid?
-    # expect(post.errors[:user_id]).to include("Poster can't be blank")
   end
 
 end

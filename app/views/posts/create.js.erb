@@ -1,0 +1,3 @@
+$("form").fadeOut('slow', function(){
+  $(this).replaceWith("<%= j (render @post)%>").fadeIn('slow');
+})
