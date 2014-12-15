@@ -2,14 +2,15 @@
   <table class="post-table">
 <% @posts.each do |post| %>
   <tr>
+    <td>
       <span class='vote'>
         <span id = "post-vote-<%=post.id%>">
           <% if already_voted?(post)%>
-              <td><h2><%=post.score %><h2></td>
+              <h2><%=post.score %><h2>
             <%else%>
-              <td><h2><%= post.score %></h2> <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: post.id), method: :post, remote: true%>
-            </td>
+              <h2><%= post.score %></h2> <%= link_to image_tag("caret8.png", :border => 0), votes_path(post_id: post.id), method: :post, remote: true%>
             <%end%>
+            </td>
         </span>
       </span>
     <td><img src="/assets/dalek_<%=rand(2..6)%>.png"></img></td>
