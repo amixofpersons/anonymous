@@ -18,7 +18,7 @@ class VotesController < ApplicationController
         format.html {
           @comment = Comment.find(params[:comment_id])
           @comment.votes << @vote
-          redirect_to post_path(comment.post)
+          redirect_to post_path(@comment.post)
         }
         format.js {
           @comment = Comment.find(params[:comment_id])
