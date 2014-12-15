@@ -5,5 +5,11 @@ class Comment < ActiveRecord::Base
 
   has_many :votes, as: :votable
 
+  def score
+    self.votes.size
+  end
 
+  def voters
+    self.votes.includes(:user).map(&:user)
+  end
 end
