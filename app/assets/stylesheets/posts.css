@@ -11,8 +11,8 @@
   font-size: 1em;
   height: 20px;
   border-radius: 5px;
-  border: solid black .190em;
-  opacity: 0.4;
+  border: solid rgb(75, 78, 79) .190em;
+  background: rgba(255,255,255,0.3)
 }
 
 .new_post textarea {
@@ -20,17 +20,36 @@
   height: 200px;
 }
 
-.new_post input[type=submit] {
+ input[type=submit] {
   opacity: 1;
   font-size: 1em;
+  
   height: 30px;
   text-decoration: none;
-  border: solid black .190em;
+  border: solid rgb(75, 78, 79) .190em;
   padding-right: 1em;
   padding-left: 1em;
   padding-top: .2em;
   color: black;
   width: 40%;
+  margin: 10px;
+}
+
+::-webkit-input-placeholder {
+  color: #637370;
+
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #637370;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #637370;
+}
+
+:-ms-input-placeholder {
+  color: #637370;
 }
 
 .posts, .single-post {
@@ -53,8 +72,8 @@ table {
   padding:10px;
 }
 
-table tr {
-  border-top: 1px solid #6D8285;
+table td {
+  border-top: 1px solid rgb(130, 157, 160);
 }
 
 
